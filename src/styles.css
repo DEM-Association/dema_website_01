@@ -1,0 +1,27 @@
+:root {
+    --dema-navy: #0b2545;
+}
+
+html,
+body,
+#root {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+    color: #0b2545;
+}
+
+/* Hero and section spacing used by pages/Home */
+.hero {
+    background: #d9d9d9;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.section {
+    padding: 40px 0;
+}
