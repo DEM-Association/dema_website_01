@@ -7,7 +7,7 @@ import Events from "./pages/Events";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/dema_website_01">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
