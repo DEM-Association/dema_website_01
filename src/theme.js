@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-// Navy blue theme for DEMA
+// Navy blue theme with red accent for DEMA
 const theme = createTheme({
   palette: {
     mode: "light",
@@ -11,17 +11,17 @@ const theme = createTheme({
       contrastText: "#ffffff",
     },
     secondary: {
-      main: "#f5a623",
-      dark: "#d4851a",
-      light: "#f7b845",
-      contrastText: "#0b2545",
+      main: "#e03e2f",
+      dark: "#c03428",
+      light: "#e85545",
+      contrastText: "#ffffff",
     },
     background: {
       default: "#ffffff",
       paper: "#fbfdff",
     },
     text: {
-      primary: "#0b2545",
+      primary: "#1b3043",
       secondary: "#243044",
     },
     divider: "rgba(11, 37, 69, 0.12)",

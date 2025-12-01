@@ -6,12 +6,12 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTheme } from "@mui/material/styles";
+import demaLogo from "../assets/dema_logo.jpg";
 
 export default function Header({ links = [] }) {
   const location = useLocation();
@@ -59,20 +59,18 @@ export default function Header({ links = [] }) {
                 "&:hover": { transform: "translateY(-1px)" },
               }}
             >
-              <Avatar
+              <Box
+                component="img"
+                src={demaLogo}
+                alt="DEMA Logo"
                 sx={{
-                  bgcolor: "secondary.main",
-                  color: "primary.main",
                   width: 42,
                   height: 42,
-                  fontWeight: 900,
-                  fontSize: "1.15rem",
+                  borderRadius: "8px",
                   boxShadow: (theme) =>
                     `0 2px 8px ${theme.palette.secondary.main}40`,
                 }}
-              >
-                D
-              </Avatar>
+              />
               <Box sx={{ lineHeight: 1 }}>
                 <Typography
                   sx={{ fontSize: "1.15rem", fontWeight: 800, color: "white" }}
@@ -86,7 +84,7 @@ export default function Header({ links = [] }) {
                     fontWeight: 600,
                   }}
                 >
-                  Digital Enterprises Management Association
+                  Digital Enterprise Management Association
                 </Typography>
               </Box>
             </Box>

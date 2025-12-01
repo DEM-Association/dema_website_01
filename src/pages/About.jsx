@@ -90,7 +90,7 @@ export default function About() {
                   color: "rgba(255,255,255,0.9)",
                 }}
               >
-                Digital Enterprises Management Association (DEMA) bridges
+                Digital Enterprise Management Association (DEMA) bridges
                 academic learning and the digital industry through hands-on
                 projects, mentorship, and curated events. We help members turn
                 ideas into real-world impact.

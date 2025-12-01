@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button, TextField, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import demaLogo from "../assets/dema_logo.jpg";
 
 export default function Footer() {
   const theme = useTheme();
@@ -44,15 +45,17 @@ export default function Footer() {
               />
               <Button
                 variant="contained"
-                color="secondary"
                 sx={{
                   textTransform: "none",
                   fontWeight: 700,
                   fontSize: "0.9rem",
                   height: "36px",
                   px: 2,
+                  bgcolor: "secondary.main",
+                  color: "white",
                   transition: "all 0.3s ease",
                   "&:hover": {
+                    bgcolor: (theme) => theme.palette.secondary.dark,
                     transform: "translateY(-2px)",
                     boxShadow: (theme) =>
                       `0 8px 20px ${theme.palette.secondary.main}80`,
@@ -73,17 +76,13 @@ export default function Footer() {
               }}
             >
               <Box
+                component="img"
+                src={demaLogo}
+                alt="DEMA Logo"
                 sx={{
                   width: 40,
                   height: 40,
-                  bgcolor: "secondary.main",
-                  color: "primary.main",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                   borderRadius: "6px",
-                  fontWeight: 800,
-                  fontSize: "0.7rem",
                   transition: "all 0.2s",
                   cursor: "pointer",
                   "&:hover": {
@@ -92,9 +91,7 @@ export default function Footer() {
                       `0 4px 12px ${theme.palette.secondary.main}4d`,
                   },
                 }}
-              >
-                D
-              </Box>
+              />
             </Box>
           </Grid>
         </Grid>
@@ -112,7 +109,7 @@ export default function Footer() {
             Privacy Policy | Terms of Use | Manage Cookies
           </Typography>
           <Typography sx={{ fontSize: "0.65rem", opacity: 0.65 }}>
-            © {new Date().getFullYear()} Digital Enterprises Management
+            © {new Date().getFullYear()} Digital Enterprise Management
             Association
           </Typography>
         </Box>

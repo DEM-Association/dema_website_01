@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Typography, Grid, Container } from "@mui/material";
 import { useTheme, alpha } from "@mui/material/styles";
+import demaLogo from "../assets/dema_logo.jpg";
+import { allEvents, getEventImage } from "../data/eventsData";
 
 function EventCard({
   title = "Event Feature",
@@ -129,17 +131,20 @@ export default function Home() {
       >
         <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
           <Box sx={{ maxWidth: 800 }}>
-            <Typography
-              variant="overline"
+            <Box
+              component="img"
+              src={demaLogo}
+              alt="DEMA Logo"
               sx={{
-                display: "inline-block",
-                color: "secondary.main",
-                fontWeight: 700,
-                mb: 1.5,
+                height: 80,
+                width: 80,
+                objectFit: "contain",
+                mb: 2.5,
+                borderRadius: 2,
+                boxShadow: (theme) =>
+                  `0 8px 24px ${alpha(theme.palette.primary.main, 0.2)}`,
               }}
-            >
-              WELCOME
-            </Typography>
+            />
 
             <Typography
               variant="h2"
@@ -150,6 +155,7 @@ export default function Home() {
                 fontSize: { xs: "2rem", md: "3.2rem" },
                 mb: 2.5,
                 letterSpacing: "-0.5px",
+                color: "secondary.main",
               }}
             >
               Connect, Innovate, and Lead
@@ -164,7 +170,7 @@ export default function Home() {
                 lineHeight: 1.7,
               }}
             >
-              Digital Enterprises Management Association (DEMA) is your gateway
+              Digital Enterprise Management Association (DEMA) is your gateway
               to connecting with industry professionals, building real-world
               projects, and developing leadership skills that matter.
             </Typography>
@@ -233,27 +239,15 @@ export default function Home() {
           />
         </Box>
         <Grid container spacing={1.5}>
-          <Grid item xs={12} md={4}>
-            <EventCard
-              title="Networking Mixer"
-              text="Connect with industry professionals, fellow members, and expand your professional network. Share ideas, discuss opportunities, and build lasting relationships in a relaxed, social setting."
-              imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <EventCard
-              title="Technical Workshop"
-              text="Dive deep into cutting-edge digital tools and technologies. Learn practical skills from industry experts through hands-on sessions designed to accelerate your professional growth."
-              imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <EventCard
-              title="Annual Conference"
-              text="Join us for our flagship event featuring keynote speakers, industry panels, workshops, and networking opportunities. Connect with leaders, learn emerging trends, and be part of the DEMA community."
-              imageUrl="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop"
-            />
-          </Grid>
+          {allEvents.past.slice(0, 3).map((event) => (
+            <Grid item xs={12} md={4} key={event.id}>
+              <EventCard
+                title={event.title}
+                text={event.description}
+                imageUrl={getEventImage(event.image)}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Container>
 
