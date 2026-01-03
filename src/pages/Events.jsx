@@ -75,146 +75,152 @@ export default function Events() {
           </Typography>
         </Box>
 
-        <Grid container spacing={2.5}>
-          {upcomingEvents.map((event, i) => (
-            <Grid item xs={12} md={4} key={i}>
-              <Box
+        <Box
+          sx={{
+            borderRadius: "10px",
+            overflow: "hidden",
+            transition: "all 0.3s ease",
+            backgroundColor: "background.paper",
+            border: (theme) =>
+              `1.5px solid ${alpha(theme.palette.primary.main, 0.12)}`,
+            boxShadow: (theme) =>
+              `0 2px 8px ${alpha(theme.palette.primary.main, 0.04)}`,
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            "&:hover": {
+              borderColor: "secondary.main",
+              boxShadow: (theme) =>
+                `0 8px 24px ${alpha(theme.palette.primary.main, 0.12)}`,
+              transform: "translateY(-4px)",
+            },
+          }}
+        >
+          {/* Featured Event Image */}
+          <Box
+            sx={{
+              height: { xs: 250, md: 350 },
+              width: { xs: "100%", md: "40%" },
+              backgroundImage: `url('${getEventImage(
+                upcomingEvents[0]?.image
+              )}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+              "&::after": {
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: (theme) =>
+                  `linear-gradient(135deg, ${alpha(
+                    theme.palette.primary.main,
+                    0.3
+                  )} 0%, ${alpha(theme.palette.primary.main, 0.1)} 100%)`,
+              },
+            }}
+          />
+
+          {/* Event Content */}
+          <Box
+            sx={{
+              p: { xs: 2.5, md: 4 },
+              width: { xs: "100%", md: "60%" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="overline"
+              sx={{
+                color: "secondary.main",
+                fontWeight: 700,
+                mb: 1.5,
+                fontSize: "0.8rem",
+                letterSpacing: 1,
+              }}
+            >
+              Upcoming
+            </Typography>
+
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: 700,
+                mb: 2,
+                fontSize: { xs: "1.8rem", md: "2.5rem" },
+                color: "primary.main",
+              }}
+            >
+              {upcomingEvents.length > 0
+                ? upcomingEvents[0].title
+                : "Coming Soon"}
+            </Typography>
+
+            {upcomingEvents.length > 0 ? (
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                {upcomingEvents.map((event, i) => (
+                  <Box key={i}>
+                    <Typography
+                      sx={{
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                        color: "secondary.main",
+                        mb: 1,
+                      }}
+                    >
+                      {event.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "0.95rem",
+                        color: "text.secondary",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 0.5,
+                      }}
+                    >
+                      <span>📅 {event.date}</span>
+                      <span>🕐 {event.time}</span>
+                      <span>📍 {event.location}</span>
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
+            ) : (
+              <Typography
                 sx={{
-                  borderRadius: "10px",
-                  overflow: "hidden",
-                  height: "100%",
-                  transition: "all 0.3s ease",
-                  backgroundColor: "background.paper",
-                  border: (theme) =>
-                    `1.5px solid ${alpha(theme.palette.primary.main, 0.12)}`,
-                  boxShadow: (theme) =>
-                    `0 2px 8px ${alpha(theme.palette.primary.main, 0.04)}`,
-                  display: "flex",
-                  flexDirection: "column",
-                  "&:hover": {
-                    borderColor: "secondary.main",
-                    boxShadow: (theme) =>
-                      `0 8px 24px ${alpha(theme.palette.primary.main, 0.12)}`,
-                    transform: "translateY(-4px)",
-                  },
+                  fontSize: "1.1rem",
+                  lineHeight: 1.8,
+                  color: "text.secondary",
+                  mb: 2.5,
                 }}
               >
-                {/* Event Image */}
-                <Box
-                  sx={{
-                    height: 140,
-                    backgroundImage: `url('${getEventImage(event.image)}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    position: "relative",
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: (theme) =>
-                        `linear-gradient(135deg, ${alpha(
-                          theme.palette.primary.main,
-                          0.3
-                        )} 0%, ${alpha(theme.palette.primary.main, 0.1)} 100%)`,
-                    },
-                  }}
-                />
+                We're currently planning exciting events for the DEMA community.
+                Check back soon for announcements!
+              </Typography>
+            )}
 
-                {/* Event Content */}
-                <Box
-                  sx={{
-                    p: 2.5,
-                    flexGrow: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  {/* Category Badge */}
-                  <Box sx={{ mb: 1.5 }}>
-                    <Chip
-                      label={event.category}
-                      size="small"
-                      sx={{
-                        bgcolor: (theme) =>
-                          alpha(theme.palette.secondary.main, 0.15),
-                        color: "secondary.main",
-                        fontWeight: 700,
-                        fontSize: "0.75rem",
-                      }}
-                    />
-                  </Box>
-
-                  {/* Title */}
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: 700,
-                      mb: 1.5,
-                      fontSize: "1.1rem",
-                      color: "primary.main",
-                    }}
-                  >
-                    {event.title}
-                  </Typography>
-
-                  {/* Date & Time */}
-                  <Box
-                    sx={{
-                      mb: 1,
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 0.5,
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: "0.85rem",
-                        fontWeight: 600,
-                        color: "secondary.main",
-                      }}
-                    >
-                      📅 {event.date}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontSize: "0.85rem",
-                        fontWeight: 600,
-                        color: "secondary.main",
-                      }}
-                    >
-                      🕐 {event.time}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontSize: "0.85rem",
-                        fontWeight: 600,
-                        color: "secondary.main",
-                      }}
-                    >
-                      📍 {event.location}
-                    </Typography>
-                  </Box>
-
-                  {/* Description */}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontSize: "0.95rem",
-                      lineHeight: 1.6,
-                      color: "text.secondary",
-                      flexGrow: 1,
-                    }}
-                  >
-                    {event.description}
-                  </Typography>
-                </Box>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+            <Typography
+              sx={{
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                color: "secondary.main",
+                p: 2,
+                bgcolor: (theme) => alpha(theme.palette.secondary.main, 0.08),
+                borderRadius: "6px",
+                borderLeft: (theme) =>
+                  `4px solid ${theme.palette.secondary.main}`,
+                mt: 2,
+              }}
+            >
+              📧 Interested in collaborating? Reach out to organize an event
+              with DEMA.
+            </Typography>
+          </Box>
+        </Box>
       </Container>
 
       {/* Previous Events Section */}

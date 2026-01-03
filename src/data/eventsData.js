@@ -23,36 +23,14 @@ export const allEvents = {
   upcoming: [
     {
       id: 1,
-      title: "Networking Mixer",
-      date: "Dec 5, 2025",
-      time: "6:00 PM - 8:00 PM",
-      location: "Downtown Tech Hub",
+      title: "TechtrakTechTrack 2026",
+      date: "Late January 2026",
+      time: "TBD",
+      location: "TBD",
       description:
-        "Connect with industry professionals, startup founders, and fellow DEMA members. A casual, interactive evening designed to build meaningful professional relationships and explore collaboration opportunities.",
+        "ISACA TechTrack is a networking and learning conference event about exploring career paths in IT, Audit, Risk, Governance, Cybersecurity, AI, and Data Analytics.",
       image: null, // Will use DEFAULT_EVENT_IMAGE
       category: "Networking",
-    },
-    {
-      id: 2,
-      title: "Web3 & AI Workshop",
-      date: "Dec 12, 2025",
-      time: "2:00 PM - 5:00 PM",
-      location: "Innovation Lab",
-      description:
-        "Dive deep into the latest emerging technologies. Learn from industry practitioners about blockchain applications, AI integration, and practical use cases in digital enterprises.",
-      image: null, // Will use DEFAULT_EVENT_IMAGE
-      category: "Workshop",
-    },
-    {
-      id: 3,
-      title: "Annual Conference 2025",
-      date: "Dec 19, 2025",
-      time: "9:00 AM - 5:00 PM",
-      location: "Convention Center",
-      description:
-        "Our flagship event featuring keynote speakers from Fortune 500 companies, expert panel discussions on digital transformation, interactive workshops, and extensive networking opportunities.",
-      image: null, // Will use DEFAULT_EVENT_IMAGE
-      category: "Conference",
     },
   ],
   past: [

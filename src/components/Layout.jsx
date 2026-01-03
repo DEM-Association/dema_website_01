@@ -9,6 +9,7 @@ export default function Layout({ children }) {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Events", href: "/events" },
+    { label: "Team", href: "/team" },
   ];
 
   return (
