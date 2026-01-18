@@ -97,7 +97,7 @@ export default function Home() {
           boxShadow: (theme) =>
             `0 20px 60px ${alpha(
               theme.palette.primary.main,
-              0.25
+              0.25,
             )}, inset 0 1px 0 ${alpha("#fff", 0.1)}`,
           border: (theme) => `1px solid ${alpha("#fff", 0.15)}`,
           transition: "all 0.6s cubic-bezier(0.23, 1, 0.320, 1)",
@@ -107,14 +107,14 @@ export default function Home() {
               boxShadow: (theme) =>
                 `0 20px 60px ${alpha(
                   theme.palette.primary.main,
-                  0.25
+                  0.25,
                 )}, inset 0 1px 0 ${alpha("#fff", 0.1)}`,
             },
             "50%": {
               boxShadow: (theme) =>
                 `0 30px 80px ${alpha(
                   theme.palette.secondary.main,
-                  0.2
+                  0.2,
                 )}, inset 0 1px 0 ${alpha("#fff", 0.15)}`,
             },
           },
@@ -128,7 +128,7 @@ export default function Home() {
             background: (theme) =>
               `linear-gradient(120deg, ${alpha(
                 theme.palette.primary.main,
-                0.75
+                0.75,
               )} 0%, ${alpha(theme.palette.primary.dark, 0.75)} 65%)`,
             zIndex: 1,
             borderRadius: 4,
