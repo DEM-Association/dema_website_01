@@ -32,7 +32,7 @@ export default function About() {
           boxShadow: (theme) =>
             `0 20px 60px ${alpha(
               theme.palette.primary.main,
-              0.3
+              0.3,
             )}, inset 0 1px 0 ${alpha("#fff", 0.1)}`,
           border: (theme) => `1px solid ${alpha("#fff", 0.15)}`,
           transition: "all 0.6s cubic-bezier(0.23, 1, 0.320, 1)",
@@ -42,14 +42,14 @@ export default function About() {
               boxShadow: (theme) =>
                 `0 20px 60px ${alpha(
                   theme.palette.primary.main,
-                  0.3
+                  0.3,
                 )}, inset 0 1px 0 ${alpha("#fff", 0.1)}`,
             },
             "50%": {
               boxShadow: (theme) =>
                 `0 30px 80px ${alpha(
                   theme.palette.secondary.main,
-                  0.25
+                  0.25,
                 )}, inset 0 1px 0 ${alpha("#fff", 0.15)}`,
             },
           },
@@ -58,18 +58,6 @@ export default function About() {
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Typography
-                variant="overline"
-                sx={{
-                  display: "inline-block",
-                  color: "secondary.main",
-                  fontWeight: 700,
-                  mb: 1,
-                }}
-              >
-                ABOUT
-              </Typography>
-
               <Typography
                 variant="h3"
                 sx={{
@@ -127,7 +115,7 @@ export default function About() {
                         boxShadow: (theme) =>
                           `0 8px 16px ${alpha(
                             theme.palette.secondary.main,
-                            0.3
+                            0.3,
                           )}`,
                       },
                     }}
@@ -154,7 +142,7 @@ export default function About() {
                         boxShadow: (theme) =>
                           `0 8px 16px ${alpha(
                             theme.palette.secondary.main,
-                            0.3
+                            0.3,
                           )}`,
                       },
                     }}
@@ -178,12 +166,12 @@ export default function About() {
                     borderRadius: "40% 60% 55% 45% / 45% 55% 45% 55%",
                     background: `radial-gradient(circle at 30% 20%, ${alpha(
                       theme.palette.secondary.main,
-                      0.14
+                      0.14,
                     )}, transparent 30%), ${alpha("#fff", 0.06)}`,
                     border: `1px solid ${alpha("#fff", 0.06)}`,
                     boxShadow: `0 10px 40px ${alpha(
                       theme.palette.primary.main,
-                      0.25
+                      0.25,
                     )}`,
                     transform: "rotate(-8deg)",
                   }}
@@ -317,7 +305,7 @@ export default function About() {
                 background: (theme) =>
                   `linear-gradient(135deg, ${alpha(
                     theme.palette.secondary.main,
-                    0.08
+                    0.08,
                   )} 0%, ${alpha(theme.palette.secondary.main, 0.02)} 100%)`,
                 border: (theme) =>
                   `2px solid ${alpha(theme.palette.secondary.main, 0.3)}`,
@@ -364,9 +352,10 @@ export default function About() {
                   fontWeight: 500,
                 }}
               >
-                Empower students with practical knowledge, industry connections,
-                and hands-on experience in digital transformation and enterprise
-                management.
+                Empower students with practical knowledge, industry connections
+                and hands-on experience in various fields.
+                <br /> We host Networking, Info Sessions, Career Support, Case
+                Competitions and more!
               </Typography>
             </Box>
           </Grid>
@@ -379,7 +368,7 @@ export default function About() {
                 background: (theme) =>
                   `linear-gradient(135deg, ${alpha(
                     theme.palette.primary.main,
-                    0.08
+                    0.08,
                   )} 0%, ${alpha(theme.palette.primary.main, 0.02)} 100%)`,
                 border: (theme) =>
                   `2px solid ${alpha(theme.palette.primary.main, 0.3)}`,
@@ -480,7 +469,7 @@ export default function About() {
                       boxShadow: (theme) =>
                         `0 8px 20px ${alpha(
                           theme.palette.secondary.main,
-                          0.12
+                          0.12,
                         )}`,
                       transform: "translateY(-2px)",
                     },

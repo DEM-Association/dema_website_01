@@ -3,6 +3,12 @@ import { Box, Typography, Grid, Container } from "@mui/material";
 import { useTheme, alpha } from "@mui/material/styles";
 import demaLogo from "../assets/dema_logo.jpg";
 import { allEvents, getEventImage } from "../data/eventsData";
+import cmlImg from "../assets/partners/homepage_DEMA_CML_2025_1.png";
+import isacaImg from "../assets/partners/homepage_DEMA_ISACA_2025_1.png";
+import microsoftImg from "../assets/partners/homepage_DEMA_Microsoft_2025_1.jpg";
+import tmuImg from "../assets/partners/homepage_DEMA_TMU_2025_1.png";
+import utmccImg from "../assets/partners/homepage_DEMA_UTMCC_2025_1.png";
+import yorkuImg from "../assets/partners/homepage_DEMA_YorkU_2025_1.png";
 
 function EventCard({
   title = "Event Feature",
@@ -276,7 +282,14 @@ export default function Home() {
           />
         </Box>
         <Grid container spacing={2}>
-          {[...Array(6)].map((_, i) => (
+          {[
+            { img: cmlImg, alt: "CML Partner" },
+            { img: isacaImg, alt: "ISACA Partner" },
+            { img: microsoftImg, alt: "Microsoft Partner" },
+            { img: tmuImg, alt: "TMU Partner" },
+            { img: utmccImg, alt: "UTMCC Partner" },
+            { img: yorkuImg, alt: "YorkU Partner" },
+          ].map((partner, i) => (
             <Grid item xs={12} sm={6} md={4} key={i}>
               <Box
                 sx={{
@@ -287,27 +300,12 @@ export default function Home() {
                   justifyContent: "center",
                   cursor: "pointer",
                   transition: "all 0.3s ease",
-                  color: "primary.main",
-                  fontWeight: 700,
-                  fontSize: "1rem",
-                  backgroundImage: `url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=200&fit=crop')`,
-                  backgroundSize: "cover",
+                  backgroundColor: "white",
+                  backgroundImage: `url('${partner.img}')`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   position: "relative",
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    background: (theme) =>
-                      `linear-gradient(135deg, ${alpha(
-                        theme.palette.primary.main,
-                        0.6
-                      )} 0%, ${alpha(theme.palette.primary.main, 0.4)} 100%)`,
-                    borderRadius: "8px",
-                  },
                   border: (theme) =>
                     `1.5px solid ${alpha(theme.palette.primary.main, 0.15)}`,
                   "&:hover": {
@@ -315,20 +313,9 @@ export default function Home() {
                     boxShadow: (theme) =>
                       `0 6px 16px ${alpha(theme.palette.primary.main, 0.12)}`,
                     transform: "translateY(-2px)",
-                    "&::before": {
-                      background: (theme) =>
-                        `linear-gradient(135deg, ${alpha(
-                          theme.palette.primary.main,
-                          0.5
-                        )} 0%, ${alpha(theme.palette.primary.main, 0.3)} 100%)`,
-                    },
                   },
                 }}
-              >
-                <Box sx={{ position: "relative", zIndex: 1, color: "white" }}>
-                  Partner {i + 1}
-                </Box>
-              </Box>
+              />
             </Grid>
           ))}
         </Grid>

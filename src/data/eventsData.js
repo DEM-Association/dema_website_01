@@ -23,7 +23,7 @@ export const allEvents = {
   upcoming: [
     {
       id: 1,
-      title: "TechtrakTechTrack 2026",
+      title: "TechTrack 2026",
       date: "Late January 2026",
       time: "TBD",
       location: "TBD",

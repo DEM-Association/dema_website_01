@@ -32,7 +32,7 @@ export default function Events() {
 
   const displayedPreviousEvents = previousEvents.slice(
     carouselIndex * itemsPerPage,
-    (carouselIndex + 1) * itemsPerPage
+    (carouselIndex + 1) * itemsPerPage,
   );
 
   return (
@@ -70,8 +70,7 @@ export default function Events() {
             }}
           >
             Join us for engaging events designed to connect, inspire, and
-            empower the DEMA community. From networking mixers to technical
-            workshops and our flagship conference.
+            empower the DEMA community.
           </Typography>
         </Box>
 
@@ -101,7 +100,7 @@ export default function Events() {
               height: { xs: 250, md: 350 },
               width: { xs: "100%", md: "40%" },
               backgroundImage: `url('${getEventImage(
-                upcomingEvents[0]?.image
+                upcomingEvents[0]?.image,
               )}')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -116,7 +115,7 @@ export default function Events() {
                 background: (theme) =>
                   `linear-gradient(135deg, ${alpha(
                     theme.palette.primary.main,
-                    0.3
+                    0.3,
                   )} 0%, ${alpha(theme.palette.primary.main, 0.1)} 100%)`,
               },
             }}
@@ -248,16 +247,6 @@ export default function Events() {
           >
             Previous Events
           </Typography>
-          <Typography
-            sx={{
-              fontSize: "0.95rem",
-              color: "text.secondary",
-              lineHeight: 1.6,
-            }}
-          >
-            Explore our past events and see the impact we've made with our
-            community.
-          </Typography>
         </Box>
 
         {/* Carousel with Overlay Arrow Controls */}
@@ -315,10 +304,10 @@ export default function Events() {
                         background: (theme) =>
                           `linear-gradient(135deg, ${alpha(
                             theme.palette.primary.main,
-                            0.3
+                            0.3,
                           )} 0%, ${alpha(
                             theme.palette.primary.main,
-                            0.1
+                            0.1,
                           )} 100%)`,
                       },
                     }}
