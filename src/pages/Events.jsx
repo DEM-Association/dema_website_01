@@ -185,6 +185,22 @@ export default function Events() {
                       <span>🕐 {event.time}</span>
                       <span>📍 {event.location}</span>
                     </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "0.9rem",
+                        fontWeight: 600,
+                        color: "secondary.main",
+                        p: 2,
+                        bgcolor: (theme) =>
+                          alpha(theme.palette.secondary.main, 0.08),
+                        borderRadius: "6px",
+                        borderLeft: (theme) =>
+                          `4px solid ${theme.palette.secondary.main}`,
+                        mt: 2,
+                      }}
+                    >
+                      {event.description}
+                    </Typography>
                   </Box>
                 ))}
               </Box>
@@ -201,23 +217,6 @@ export default function Events() {
                 Check back soon for announcements!
               </Typography>
             )}
-
-            <Typography
-              sx={{
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                color: "secondary.main",
-                p: 2,
-                bgcolor: (theme) => alpha(theme.palette.secondary.main, 0.08),
-                borderRadius: "6px",
-                borderLeft: (theme) =>
-                  `4px solid ${theme.palette.secondary.main}`,
-                mt: 2,
-              }}
-            >
-              📧 Interested in collaborating? Reach out to organize an event
-              with DEMA.
-            </Typography>
           </Box>
         </Box>
       </Container>

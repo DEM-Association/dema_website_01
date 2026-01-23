@@ -24,9 +24,9 @@ export const allEvents = {
     {
       id: 1,
       title: "TechTrack 2026",
-      date: "Late January 2026",
-      time: "TBD",
-      location: "TBD",
+      date: "February 04, 2026",
+      time: "6-8 PM",
+      location: "Keneff Hall",
       description:
         "ISACA TechTrack is a networking and learning conference event about exploring career paths in IT, Audit, Risk, Governance, Cybersecurity, AI, and Data Analytics.",
       image: null, // Will use DEFAULT_EVENT_IMAGE

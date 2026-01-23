@@ -10,6 +10,48 @@ export default function Team() {
 
   return (
     <Box sx={{ bgcolor: "background.default", color: "text.primary" }}>
+      {/* Team Description Hero - Moved to Top */}
+      <Box
+        sx={{
+          background: (theme) =>
+            `linear-gradient(135deg, ${alpha(
+              theme.palette.secondary.main,
+              0.08,
+            )} 0%, ${alpha(theme.palette.secondary.main, 0.02)} 100%)`,
+          border: (theme) =>
+            `2px solid ${alpha(theme.palette.secondary.main, 0.3)}`,
+          borderRadius: 4,
+          p: { xs: 3.5, md: 5 },
+          mb: 6,
+          boxShadow: (theme) =>
+            `0 8px 24px ${alpha(theme.palette.secondary.main, 0.1)}`,
+          margin: { xs: "20px 1.5rem", md: "30px 2rem" },
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: "2rem",
+            fontWeight: 800,
+            color: "secondary.main",
+            mb: 2,
+          }}
+        >
+          🏆 Our Leadership
+        </Typography>
+        <Typography
+          sx={{
+            fontSize: { xs: "1rem", md: "1.15rem" },
+            color: "text.primary",
+            lineHeight: 1.8,
+            maxWidth: 900,
+            mx: "auto",
+            fontWeight: 500,
+          }}
+        >
+          {teamDescription}
+        </Typography>
+      </Box>
       <Container maxWidth="lg" sx={{ py: 3, pt: 6, pb: 3 }}>
         <Box sx={{ mb: 5 }}>
           <Typography
@@ -76,7 +118,7 @@ export default function Team() {
                   sx={{
                     height: 180,
                     backgroundImage: `url('${getTeamMemberImage(
-                      member.image
+                      member.image,
                     )}')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -91,10 +133,10 @@ export default function Team() {
                       background: (theme) =>
                         `linear-gradient(135deg, ${alpha(
                           theme.palette.primary.main,
-                          0.2
+                          0.2,
                         )} 0%, ${alpha(
                           theme.palette.primary.main,
-                          0.05
+                          0.05,
                         )} 100%)`,
                     },
                   }}
@@ -136,26 +178,6 @@ export default function Team() {
         </Grid>
 
         {/* Team Description */}
-        <Box
-          sx={{
-            bgcolor: (theme) => alpha(theme.palette.primary.main, 0.04),
-            border: (theme) =>
-              `1.5px solid ${alpha(theme.palette.primary.main, 0.12)}`,
-            borderRadius: "10px",
-            p: { xs: 2.5, md: 4 },
-            lineHeight: 1.8,
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              color: "text.secondary",
-              fontWeight: 500,
-            }}
-          >
-            {teamDescription}
-          </Typography>
-        </Box>
       </Container>
     </Box>
   );
